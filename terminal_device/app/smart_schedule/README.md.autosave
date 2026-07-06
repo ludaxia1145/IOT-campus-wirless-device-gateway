@@ -1,0 +1,15 @@
+# 智慧教务终端  - 基于IMX6ULL的校园无线通信设备
+
+# 一.交叉编译
+## 1.确保有这个NXP IMX交叉编译环境
+ls /opt/fsl-imx-x11/4.1.15-2.1.0/environment-setup-cortexa7hf-neon-poky-linux-gnueabi
+
+## 2.将当前终端会话切换成针对 ARM 架构的交叉编译环境
+source /opt/fsl-imx-x11/4.1.15-2.1.0/environment-setup-cortexa7hf-neon-poky-linux-gnueabi
+
+## 3.编写smart_schedule.pro,给项目文件生成 Makefile
+qmake smart_schedule.pro
+
+## 4.执行make
+make
+

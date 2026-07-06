@@ -1,1 +1,0 @@
-# IOT-campus-wirless-device-gateway
