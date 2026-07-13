@@ -5,7 +5,7 @@
 
 > 一套完整的嵌入式IoT解决方案：校园无线显示终端 + 网关设备 + Web管理平台
 
-## 📱 项目概述
+## 项目概述
 
 本项目是一个**三层架构**的智能校园系统，用于教室课程展示、考勤管理和学生服务：
 
@@ -28,7 +28,7 @@
     └────────┘      └─────────┘  └─────────┘
 ```
 
-## 🏗️ 项目结构
+## 项目结构
 
 ```
 IOT campus wirless device and gateway/
@@ -89,6 +89,7 @@ IOT campus wirless device and gateway/
 └── README.md                    # 本文件
 ```
 
+## 根文件系统配置
 my_rootfs_additions/
 ├── etc
 │   ├── init.d
