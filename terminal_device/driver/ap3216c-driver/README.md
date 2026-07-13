@@ -3,6 +3,7 @@
 ## 功能简介
 基于环境光传感器 AP3216C 的自动背光亮度调节程序。程序通过 Linux IIO 框架读取 ALS 原始值，经线性映射后动态调整屏幕背光亮度
 
+
 ## 编译方法
 ### 1.确保板卡上的内核在如下目录中:
 /home/doge/project/IOT_wirlessdevice_and_gateway/linuxkernel
@@ -11,28 +12,7 @@
 CROSS_COMPILE = arm-linux-gnueabihf-
 
 ### 执行make
-
-
-
-### 一.应用程序与驱动程序的所有交互节点
-
-# 节点1 - /sys/bus/iio/devices/iio:deviceX/name 
-作用:识别设备是否为AP3216C
-
-# 节点2 - /sys/bus/iio/devices/iio:deviceX/in_illuminance_raw
-作用:读取环境光传感器(ALS)的原始值
-
-# 节点3 - /sys/bus/iio/devices/iio:deviceX/in_illuminance_scale
-作用:获取原始值到lux的转换系数
-
-# 节点4 - /sys/bus/iio/devices/iio:deviceX/in_proximity_raw
-作用:读取接近传感器(PS)原始值
-
-# 节点5 - /sys/bus/iio/devices/iio:deviceX/in_intensity_ir_raw
-作用:读取红外传感器(IR)的原始值
-
-# 节点6 - /sys/class/backlight/backlight/brightness
-作用:设置/读取屏幕背光亮度
+make
 
 
 ### 驱动程序的调用步骤
@@ -85,18 +65,5 @@ static const struct iio_info ap3216c_info = {
     //核心读取函数，当用户读取任何 sysfs 节点时，IIO 框架都会调用它
     .read_raw = ap3216c_read_raw,
 };
-
-
-### 三.自动亮度调节应用程序
-
-# 调节方法
-亮度 = ALS原始值 × 最大亮度等级 / ALS最大原始值
-
-# 前台+后台支持
-## 后台程序:
-两次fork，让进程脱离终端，避免终端关闭终止进程
-
-## 前台:
-printf
 
 
