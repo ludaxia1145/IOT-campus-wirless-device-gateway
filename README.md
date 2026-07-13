@@ -91,29 +91,26 @@ IOT campus wirless device and gateway/
 
 ## 根文件系统配置
 my_rootfs_additions/
-├── etc
-│   ├── init.d
+├── etc/
+│   ├── init.d/
 │   │   ├── S11modules
 │   │   └── S99myapps
-│   └── systemd
-│       └── system
+│   └── systemd/
+│       └── system/
 │           ├── auto_brightness.service
 │           ├── gesture_monitor.service
 │           └── smart_schedule.service
-├── lib
-│   └── modules
-│       └── 4.1.15
-│           ├── ap3216c_iio.ko
-│           └── icm20608.ko
-└── usr
-    ├── app
+├── lib/
+│   └── modules/
+│       ├── ap3216c_iio.ko
+│       └── icm20608.ko
+└── usr/
+    ├── app/
     │   ├── auto_brightness
     │   ├── gesture_monitor
     │   ├── protect_ui
     │   └── smart_schedule
-    └── audio
+    └── audio/
         └── success.wav
-
----
 
 >>>>>>> 119b451 (首次提交：IOT campus wirless device and gateway)
